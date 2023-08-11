@@ -53,5 +53,5 @@ bash scripts/test_LOGO_10kmid.sh
 bash scripts/test_LOGO_10kgray.sh
 ```
 
-## Acknowledgements
+## Acknowledgement
 This code is mainly based on the previous work [SLBR](https://github.com/bcmi/SLBR-Visible-Watermark-Removal).
