@@ -1,17 +1,48 @@
-## DENet: Disentangled Embedding Network for Visible Watermark Removal
+# DENet: Disentangled Embedding Network for Visible Watermark Removal
 
-## Introduction
+This is official implementation of paper DENet: Disentangled Embedding Network for Visible Watermark Removal [[AAAI2023 Oral](https://ojs.aaai.org/index.php/AAAI/article/view/25337)]
 
-In this paper, we propose a novel contrastive learning mechanism to disentangle the high-level embedding semantic information of the images and watermarks, driving the respective network branch more oriented. Specifically, the proposed mechanism is leveraged for watermark images decomposition, which aims to decouple the clean image and watermark hints in the high-level embedding space. This can guarantee the learning representation of the restored image enjoy more task-specific cues. In addition, we introduce a self-attention-based enhancement module, which promotes the network's ability to capture semantic information among different regions, leading to further improvement on the contrastive learning mechanism. To validate the effectiveness of our proposed method, extensive experiments are conducted on different challenging benchmarks. Experimental evaluations show that our approach can achieve state-of-the-art performance and yield high-quality images.
+<img src='imgs/framework.png'>
 
-## Network
-
-<img src="./asset/network.png">
-
+## Dataset preparation
+~~~
+|--data
+|--|--LOGO
+   |--|--10kmid
+   |--|--10kgray
+   |--|--10khigh
+~~~
+## Installation
+```bash
+pip install -r requirements.txt
+```
 ## Training
+### Train on LOGO-H
+```bash
+bash scripts/train_contrast_attention_on_logo_high.sh 
+```
+### Train on LOGO-L
+```bash
+bash scripts/train_contrast_attention_on_logo_mid.sh 
+```
+### Train on LOGO-Gray
+```bash
+bash scripts/train_contrast_attention_on_logo_gray.sh
+```
 
-Code coming soon!
+## Testing
+### Test on LOGO-H
+```bash
+bash scripts/test_LOGO_10khigh.sh
+```
+### Test on LOGO-L
+```bash
+bash scripts/test_LOGO_10kmid.sh
+```
+### Test on LOGO-Gray
+```bash
+bash scripts/test_LOGO_10kgray.sh
+```
 
-## Acknowledgement
-
-
+## Acknowledgements
+This code is mainly based on the previous work [SLBR](https://github.com/bcmi/SLBR-Visible-Watermark-Removal)
